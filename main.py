@@ -1,11 +1,17 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from dotenv import load_dotenv
 import utils
+import os
+
+load_dotenv()
+
+SUBSCRIPTION_KEY = os.getenv("SUBSCRIPTION_KEY")
 
 app = FastAPI()
 
 # headers = {
-#     "Ocp-Apim-Subscription-Key": <SUBSCRIPTION_KEY>,
+#     "Ocp-Apim-Subscription-Key": SUBSCRIPTION_KEY,
 #     "Content-Type": "application/json",
 #     "Accept": "application/json"
 # }
